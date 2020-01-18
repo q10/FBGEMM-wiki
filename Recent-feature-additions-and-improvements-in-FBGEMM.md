@@ -22,7 +22,7 @@ Rest of the document highlights the major feature additions to FBGEMM. In additi
 ### Better support for recent HWs
 
 * **VNNI support**: A few operators were implemented to support VNNI instruction set. VNNI instruction set will be available in the most recent and upcoming generation of processors (e.g., Cooper Lake CPUs). 
-* **AVX512 and AVX512-YMM FP16 GEMM**: We improved the performance FP16 FBGEMM on Intel Xeon Gold 6138 processor using AVX512 (the previous version was only using AVX2). We also added an option called avx512_ymm that uses AVX512 instructions but with YMM registers (32 YMM registers are still available rather than 16 in AVX2). This is for Skylake Xeon-D where we can only execute 1 instruction using ZMM per cycle, while the ZMM instruction slows down clock-frequency. On a recommendation model using FP16 kernels, we observed an end-to-end 10% improvement in latency.
+* **AVX512 and AVX512-YMM FP16 GEMM**: We improved the performance FP16 FBGEMM on recent x86 processors using AVX512 (the previous version was only using AVX2). We also added an option called avx512_ymm that uses AVX512 instructions but with YMM registers (32 YMM registers are still available rather than 16 in AVX2). This is for Skylake Xeon-D where we can only execute 1 instruction using ZMM per cycle, while the ZMM instruction slows down clock-frequency. On a recommendation model using FP16 kernels, we observed an end-to-end 10% improvement in latency.
 
 
 ### Better scalability
